@@ -110,9 +110,9 @@ function doDeleteDirectory(currentDir, options, currentLevel) {
 
 function isOlder(path, ageSeconds) {
     var     stats = fs.statSync(path)
-        ,   ctime = stats.ctime.getTime();
+        ,   mtime = stats.mtime.getTime();
 
-    return (ctime + (ageSeconds * 1000)) < now;
+    return (mtime + (ageSeconds * 1000)) < now;
 }
 
 function doDeleteFile(currentFile, options) {
